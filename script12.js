@@ -1,5 +1,15 @@
-let sections =document.querySelectorAll('section');
-let navlinks =document.querySelectorAll('header nav a');
+let menuIcon  = document.querySelectorAll('#menu-icon');
+let navbar =document.querySelectorAll('header nav a');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+}
+
+
+
+let section =document.querySelectorAll('section');
+let navLinks =document.querySelectorAll('header nav a');
 
 window.onscroll=() => {
     sections.forEach(sec => {
@@ -18,4 +28,7 @@ window.onscroll=() => {
     let header = document.querySelector('header');
 
     header.classList.toggle('sticky', window.scrollY > 100);
+
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
 };
